@@ -1,0 +1,223 @@
+
+<!-- saved from url=(0068)https://null.udemy.com/staticx/udemy/js/other-libs/jsbin/iframe.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./react-16.13.0.development.js.download"></script>
+<script src="./react-dom-16.13.0.development.js.download"></script>
+<script class="babelScript" src="./babel-7.8.7.min.js.download"></script><script src="./babel-plugin-remove-import-export-1.1.1-udemy.js.download"></script>
+<script src="./polyfill-7.4.0.min.js.download"></script>
+<script type="text/javascript">
+// this must run before any babel-compiled modules, so should probably
+// be the first script in your page
+window.exports = window;
+var require = (module) => {
+    if (module === "react") return React;
+    if (module === "react-dom") return ReactDOM;
+};
+var Component = React.Component;
+var PropTypes = React.PropTypes;
+</script>
+<script type="text/babel" data-presets="env,react">
+window.onload = function(e){
+    ReactDOM.render(<App name="Sara" />, document.getElementById('app'));
+}
+</script>
+<style></style><script>"use strict";
+
+window.onload = function (e) {
+  ReactDOM.render(React.createElement(App, {
+    name: "Sara"
+  }), document.getElementById('app'));
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIklubGluZSBCYWJlbCBzY3JpcHQiXSwibmFtZXMiOlsid2luZG93Iiwib25sb2FkIiwiZSIsIlJlYWN0RE9NIiwicmVuZGVyIiwiZG9jdW1lbnQiLCJnZXRFbGVtZW50QnlJZCJdLCJtYXBwaW5ncyI6Ijs7QUFDQUEsTUFBTSxDQUFDQyxNQUFQLEdBQWdCLFVBQVNDLENBQVQsRUFBVztBQUN2QkMsRUFBQUEsUUFBUSxDQUFDQyxNQUFULENBQWdCLG9CQUFDLEdBQUQ7QUFBSyxJQUFBLElBQUksRUFBQztBQUFWLElBQWhCLEVBQXFDQyxRQUFRLENBQUNDLGNBQVQsQ0FBd0IsS0FBeEIsQ0FBckM7QUFDSCxDQUZEIiwic291cmNlc0NvbnRlbnQiOlsiXG53aW5kb3cub25sb2FkID0gZnVuY3Rpb24oZSl7XG4gICAgUmVhY3RET00ucmVuZGVyKDxBcHAgbmFtZT1cIlNhcmFcIiAvPiwgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2FwcCcpKTtcbn1cbiJdfQ==</script><script>"use strict";
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+// You don't need to make any changes to this file! 
+// Take a look at SongList.js
+var App = /*#__PURE__*/function (_React$Component) {
+  _inherits(App, _React$Component);
+
+  function App() {
+    _classCallCheck(this, App);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(App).apply(this, arguments));
+  }
+
+  _createClass(App, [{
+    key: "render",
+    value: function render() {
+      return React.createElement("div", null, React.createElement("link", {
+        rel: "stylesheet",
+        href: "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      }), React.createElement(SongList, null));
+    }
+  }]);
+
+  return App;
+}(React.Component); // You don't need to make any changes to this file! 
+// Take a look at SongList.js
+
+
+var connect = function connect(mapStateToProps) {
+  return function (Comp) {
+    var state = {
+      songs: [{
+        title: 'No Scrubs',
+        duration: '4:05'
+      }, {
+        title: 'Macarena',
+        duration: '2:30'
+      }, {
+        title: 'All Star',
+        duration: '3:15'
+      }, {
+        title: 'I Want it That Way',
+        duration: '1:45'
+      }],
+      favoriteTitle: 'All Star'
+    };
+    return function (props) {
+      return React.createElement(Comp, _extends({}, props, mapStateToProps(state)));
+    };
+  };
+};
+
+var _SongList = /*#__PURE__*/function (_React$Component2) {
+  _inherits(_SongList, _React$Component2);
+
+  function _SongList() {
+    _classCallCheck(this, _SongList);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(_SongList).apply(this, arguments));
+  }
+
+  _createClass(_SongList, [{
+    key: "renderList",
+    value: function renderList() {
+      var _this = this;
+
+      return this.props.songs.map(function (song) {
+        return React.createElement("div", {
+          className: "item",
+          key: song.title
+        }, React.createElement("div", {
+          className: "right floated content"
+        }, React.createElement("div", {
+          className: "ui button primary"
+        }, "Select")), React.createElement("div", {
+          className: "content"
+        }, song.title, React.createElement("div", null, React.createElement("b", null, song.title === _this.props.favoriteTitle && 'Favorite!'))));
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement("div", {
+        className: "ui divided list"
+      }, this.renderList());
+    }
+  }]);
+
+  return _SongList;
+}(React.Component);
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    songs: state.songs,
+    favoriteTitle: state.favoriteTitle
+  };
+};
+
+var SongList = connect(mapStateToProps)(_SongList);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIklubGluZSBCYWJlbCBzY3JpcHQgKDIpIl0sIm5hbWVzIjpbIkFwcCIsIlJlYWN0IiwiQ29tcG9uZW50IiwiY29ubmVjdCIsIm1hcFN0YXRlVG9Qcm9wcyIsIkNvbXAiLCJzdGF0ZSIsInNvbmdzIiwidGl0bGUiLCJkdXJhdGlvbiIsImZhdm9yaXRlVGl0bGUiLCJwcm9wcyIsIl9Tb25nTGlzdCIsIm1hcCIsInNvbmciLCJyZW5kZXJMaXN0IiwiU29uZ0xpc3QiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUNBO0lBS01BLEc7Ozs7Ozs7Ozs7OzZCQUNLO0FBQ1AsYUFBTyxpQ0FDSDtBQUNFLFFBQUEsR0FBRyxFQUFDLFlBRE47QUFFRSxRQUFBLElBQUksRUFBQztBQUZQLFFBREcsRUFLSCxvQkFBQyxRQUFELE9BTEcsQ0FBUDtBQU9EOzs7O0VBVGVDLEtBQUssQ0FBQ0MsUyxHQVl4QjtBQUNBOzs7QUFJTyxJQUFNQyxPQUFPLEdBQUcsU0FBVkEsT0FBVSxDQUFDQyxlQUFELEVBQXFCO0FBQ3hDLFNBQU8sVUFBQ0MsSUFBRCxFQUFVO0FBQ2IsUUFBTUMsS0FBSyxHQUFHO0FBQ1ZDLE1BQUFBLEtBQUssRUFBRSxDQUNIO0FBQUVDLFFBQUFBLEtBQUssRUFBRSxXQUFUO0FBQXNCQyxRQUFBQSxRQUFRLEVBQUU7QUFBaEMsT0FERyxFQUVIO0FBQUVELFFBQUFBLEtBQUssRUFBRSxVQUFUO0FBQXFCQyxRQUFBQSxRQUFRLEVBQUU7QUFBL0IsT0FGRyxFQUdIO0FBQUVELFFBQUFBLEtBQUssRUFBRSxVQUFUO0FBQXFCQyxRQUFBQSxRQUFRLEVBQUU7QUFBL0IsT0FIRyxFQUlIO0FBQUVELFFBQUFBLEtBQUssRUFBRSxvQkFBVDtBQUErQkMsUUFBQUEsUUFBUSxFQUFFO0FBQXpDLE9BSkcsQ0FERztBQU9WQyxNQUFBQSxhQUFhLEVBQUU7QUFQTCxLQUFkO0FBVUEsV0FBTyxVQUFDQyxLQUFELEVBQVc7QUFFZCxhQUFPLG9CQUFDLElBQUQsZUFBVUEsS0FBVixFQUFxQlAsZUFBZSxDQUFDRSxLQUFELENBQXBDLEVBQVA7QUFDSCxLQUhEO0FBSUgsR0FmRDtBQWdCSCxDQWpCTTs7SUFxQkRNLFM7Ozs7Ozs7Ozs7O2lDQUNXO0FBQUE7O0FBQ1QsYUFBTyxLQUFLRCxLQUFMLENBQVdKLEtBQVgsQ0FBaUJNLEdBQWpCLENBQXFCLFVBQUFDLElBQUksRUFBSTtBQUNoQyxlQUNJO0FBQUssVUFBQSxTQUFTLEVBQUMsTUFBZjtBQUFzQixVQUFBLEdBQUcsRUFBRUEsSUFBSSxDQUFDTjtBQUFoQyxXQUNJO0FBQUssVUFBQSxTQUFTLEVBQUM7QUFBZixXQUNJO0FBQUssVUFBQSxTQUFTLEVBQUM7QUFBZixvQkFESixDQURKLEVBSUk7QUFBSyxVQUFBLFNBQVMsRUFBQztBQUFmLFdBQ0tNLElBQUksQ0FBQ04sS0FEVixFQUVJLGlDQUNJLCtCQUFJTSxJQUFJLENBQUNOLEtBQUwsS0FBZSxLQUFJLENBQUNHLEtBQUwsQ0FBV0QsYUFBMUIsSUFBMkMsV0FBL0MsQ0FESixDQUZKLENBSkosQ0FESjtBQWFILE9BZE0sQ0FBUDtBQWVIOzs7NkJBRVE7QUFDTCxhQUFPO0FBQUssUUFBQSxTQUFTLEVBQUM7QUFBZixTQUFrQyxLQUFLSyxVQUFMLEVBQWxDLENBQVA7QUFDSDs7OztFQXJCbUJkLEtBQUssQ0FBQ0MsUzs7QUF3QjlCLElBQU1FLGVBQWUsR0FBRyxTQUFsQkEsZUFBa0IsQ0FBQUUsS0FBSyxFQUFJO0FBQzdCLFNBQU87QUFBRUMsSUFBQUEsS0FBSyxFQUFFRCxLQUFLLENBQUNDLEtBQWY7QUFBc0JHLElBQUFBLGFBQWEsRUFBRUosS0FBSyxDQUFDSTtBQUEzQyxHQUFQO0FBQ0gsQ0FGRDs7QUFJTyxJQUFNTSxRQUFRLEdBQUdiLE9BQU8sQ0FBQ0MsZUFBRCxDQUFQLENBQXlCUSxTQUF6QixDQUFqQiIsInNvdXJjZXNDb250ZW50IjpbIi8vIFlvdSBkb24ndCBuZWVkIHRvIG1ha2UgYW55IGNoYW5nZXMgdG8gdGhpcyBmaWxlISBcbi8vIFRha2UgYSBsb29rIGF0IFNvbmdMaXN0LmpzXG5cblxuXG5cbmNsYXNzIEFwcCBleHRlbmRzIFJlYWN0LkNvbXBvbmVudCB7XG4gIHJlbmRlcigpIHtcbiAgICByZXR1cm4gPGRpdj5cbiAgICAgICAgPGxpbmtcbiAgICAgICAgICByZWw9XCJzdHlsZXNoZWV0XCJcbiAgICAgICAgICBocmVmPVwiaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvc2VtYW50aWMtdWkvMi40LjEvc2VtYW50aWMubWluLmNzc1wiXG4gICAgICAgIC8+XG4gICAgICAgIDxTb25nTGlzdCAvPlxuICAgIDwvZGl2PlxuICB9XG59XG5cbi8vIFlvdSBkb24ndCBuZWVkIHRvIG1ha2UgYW55IGNoYW5nZXMgdG8gdGhpcyBmaWxlISBcbi8vIFRha2UgYSBsb29rIGF0IFNvbmdMaXN0LmpzXG5cblxuXG5leHBvcnQgY29uc3QgY29ubmVjdCA9IChtYXBTdGF0ZVRvUHJvcHMpID0+IHtcbiAgICByZXR1cm4gKENvbXApID0+IHtcbiAgICAgICAgY29uc3Qgc3RhdGUgPSB7XG4gICAgICAgICAgICBzb25nczogW1xuICAgICAgICAgICAgICAgIHsgdGl0bGU6ICdObyBTY3J1YnMnLCBkdXJhdGlvbjogJzQ6MDUnIH0sXG4gICAgICAgICAgICAgICAgeyB0aXRsZTogJ01hY2FyZW5hJywgZHVyYXRpb246ICcyOjMwJyB9LFxuICAgICAgICAgICAgICAgIHsgdGl0bGU6ICdBbGwgU3RhcicsIGR1cmF0aW9uOiAnMzoxNScgfSxcbiAgICAgICAgICAgICAgICB7IHRpdGxlOiAnSSBXYW50IGl0IFRoYXQgV2F5JywgZHVyYXRpb246ICcxOjQ1JyB9XG4gICAgICAgICAgICBdLFxuICAgICAgICAgICAgZmF2b3JpdGVUaXRsZTogJ0FsbCBTdGFyJ1xuICAgICAgICB9O1xuICAgICAgICBcbiAgICAgICAgcmV0dXJuIChwcm9wcykgPT4ge1xuICAgICAgICAgICAgXG4gICAgICAgICAgICByZXR1cm4gPENvbXAgey4uLnByb3BzfSB7Li4ubWFwU3RhdGVUb1Byb3BzKHN0YXRlKX0gLz5cbiAgICAgICAgfTtcbiAgICB9O1xufTtcblxuXG5cbmNsYXNzIF9Tb25nTGlzdCBleHRlbmRzIFJlYWN0LkNvbXBvbmVudCB7XG4gICAgcmVuZGVyTGlzdCgpIHtcbiAgICAgICAgcmV0dXJuIHRoaXMucHJvcHMuc29uZ3MubWFwKHNvbmcgPT4ge1xuICAgICAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIml0ZW1cIiBrZXk9e3NvbmcudGl0bGV9PlxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInJpZ2h0IGZsb2F0ZWQgY29udGVudFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJ1aSBidXR0b24gcHJpbWFyeVwiPlNlbGVjdDwvZGl2PlxuICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjb250ZW50XCI+XG4gICAgICAgICAgICAgICAgICAgICAgICB7c29uZy50aXRsZX1cbiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGI+e3NvbmcudGl0bGUgPT09IHRoaXMucHJvcHMuZmF2b3JpdGVUaXRsZSAmJiAnRmF2b3JpdGUhJ308L2I+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICApO1xuICAgICAgICB9KTtcbiAgICB9XG5cbiAgICByZW5kZXIoKSB7XG4gICAgICAgIHJldHVybiA8ZGl2IGNsYXNzTmFtZT1cInVpIGRpdmlkZWQgbGlzdFwiPnt0aGlzLnJlbmRlckxpc3QoKX08L2Rpdj47XG4gICAgfVxufVxuXG5jb25zdCBtYXBTdGF0ZVRvUHJvcHMgPSBzdGF0ZSA9PiB7XG4gICAgcmV0dXJuIHsgc29uZ3M6IHN0YXRlLnNvbmdzLCBmYXZvcml0ZVRpdGxlOiBzdGF0ZS5mYXZvcml0ZVRpdGxlfTtcbn07XG5cbmV4cG9ydCBjb25zdCBTb25nTGlzdCA9IGNvbm5lY3QobWFwU3RhdGVUb1Byb3BzKShfU29uZ0xpc3QpO1xuIl19</script></head><body><div id="app"><div><link rel="stylesheet" href="./semantic.min.css"><div class="ui divided list"><div class="item"><div class="right floated content"><div class="ui button primary">Select</div></div><div class="content">No Scrubs<div><b></b></div></div></div><div class="item"><div class="right floated content"><div class="ui button primary">Select</div></div><div class="content">Macarena<div><b></b></div></div></div><div class="item"><div class="right floated content"><div class="ui button primary">Select</div></div><div class="content">All Star<div><b>Favorite!</b></div></div></div><div class="item"><div class="right floated content"><div class="ui button primary">Select</div></div><div class="content">I Want it That Way<div><b></b></div></div></div></div></div></div>
+<script type="text/babel" data-presets="env,react" data-plugins="remove-import-export">// You don't need to make any changes to this file! 
+// Take a look at SongList.js
+
+
+
+
+class App extends React.Component {
+  render() {
+    return <div>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+        />
+        <SongList />
+    </div>
+  }
+}
+
+// You don't need to make any changes to this file! 
+// Take a look at SongList.js
+
+
+
+export const connect = (mapStateToProps) => {
+    return (Comp) => {
+        const state = {
+            songs: [
+                { title: 'No Scrubs', duration: '4:05' },
+                { title: 'Macarena', duration: '2:30' },
+                { title: 'All Star', duration: '3:15' },
+                { title: 'I Want it That Way', duration: '1:45' }
+            ],
+            favoriteTitle: 'All Star'
+        };
+        
+        return (props) => {
+            
+            return <Comp {...props} {...mapStateToProps(state)} />
+        };
+    };
+};
+
+
+
+class _SongList extends React.Component {
+    renderList() {
+        return this.props.songs.map(song => {
+            return (
+                <div className="item" key={song.title}>
+                    <div className="right floated content">
+                        <div className="ui button primary">Select</div>
+                    </div>
+                    <div className="content">
+                        {song.title}
+                        <div>
+                            <b>{song.title === this.props.favoriteTitle && 'Favorite!'}</b>
+                        </div>
+                    </div>
+                </div>
+            );
+        });
+    }
+
+    render() {
+        return <div className="ui divided list">{this.renderList()}</div>;
+    }
+}
+
+const mapStateToProps = state => {
+    return { songs: state.songs, favoriteTitle: state.favoriteTitle};
+};
+
+export const SongList = connect(mapStateToProps)(_SongList);
+</script></body></html>
