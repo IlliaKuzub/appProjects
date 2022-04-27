@@ -1,0 +1,148 @@
+
+<!-- saved from url=(0068)https://null.udemy.com/staticx/udemy/js/other-libs/jsbin/iframe.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/babel" data-plugins="proposal-class-properties" data-presets="env,react">
+    // Action Creators - You don't need to change these
+    const increment = () => ({ type: 'increment' });
+    const decrement = () => ({ type: 'decrement' });
+    
+    const Counter = (props) => {
+        return (
+            <div>
+                <button className="increment" onClick={props.increment}>Increment</button>
+                <button className="decrement" onClick={props.decrement}>Decrement</button>
+                Current Count: <span>{props.count}</span>
+            </div>
+        );
+    };
+    
+    const mapStateToProps = state => {
+        return {count: state.count};
+    };
+    
+    const WrappedCounter = ReactRedux.connect(mapStateToProps, {
+        increment,
+        decrement
+    })(Counter);
+    
+    // Only change code *before* me!
+    // -----------
+    
+    const store = Redux.createStore(Redux.combineReducers({
+        count: (count = 0, action) => {
+            if (action.type === 'increment') {
+                return count + 1;
+            } else if (action.type === 'decrement') {
+                return count - 1;
+            } else {
+                return count;
+            }
+        }
+    }));
+
+    ReactDOM.render(
+        <ReactRedux.Provider store={store}>
+            <WrappedCounter />
+        </ReactRedux.Provider>, 
+        document.querySelector('#root')
+    );
+</script>
+
+
+
+
+
+
+<!--The App component above will be rendered into this-->
+<style></style><script>"use strict";
+
+// Action Creators - You don't need to change these
+var increment = function increment() {
+  return {
+    type: 'increment'
+  };
+};
+
+var decrement = function decrement() {
+  return {
+    type: 'decrement'
+  };
+};
+
+var Counter = function Counter(props) {
+  return React.createElement("div", null, React.createElement("button", {
+    className: "increment",
+    onClick: props.increment
+  }, "Increment"), React.createElement("button", {
+    className: "decrement",
+    onClick: props.decrement
+  }, "Decrement"), "Current Count: ", React.createElement("span", null, props.count));
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    count: state.count
+  };
+};
+
+var WrappedCounter = ReactRedux.connect(mapStateToProps, {
+  increment: increment,
+  decrement: decrement
+})(Counter); // Only change code *before* me!
+// -----------
+
+var store = Redux.createStore(Redux.combineReducers({
+  count: function count() {
+    var _count = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
+    var action = arguments.length > 1 ? arguments[1] : undefined;
+
+    if (action.type === 'increment') {
+      return _count + 1;
+    } else if (action.type === 'decrement') {
+      return _count - 1;
+    } else {
+      return _count;
+    }
+  }
+}));
+ReactDOM.render(React.createElement(ReactRedux.Provider, {
+  store: store
+}, React.createElement(WrappedCounter, null)), document.querySelector('#root'));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIklubGluZSBCYWJlbCBzY3JpcHQiXSwibmFtZXMiOlsiaW5jcmVtZW50IiwidHlwZSIsImRlY3JlbWVudCIsIkNvdW50ZXIiLCJwcm9wcyIsImNvdW50IiwibWFwU3RhdGVUb1Byb3BzIiwic3RhdGUiLCJXcmFwcGVkQ291bnRlciIsIlJlYWN0UmVkdXgiLCJjb25uZWN0Iiwic3RvcmUiLCJSZWR1eCIsImNyZWF0ZVN0b3JlIiwiY29tYmluZVJlZHVjZXJzIiwiYWN0aW9uIiwiUmVhY3RET00iLCJyZW5kZXIiLCJkb2N1bWVudCIsInF1ZXJ5U2VsZWN0b3IiXSwibWFwcGluZ3MiOiI7O0FBQ0k7QUFDQSxJQUFNQSxTQUFTLEdBQUcsU0FBWkEsU0FBWTtBQUFBLFNBQU87QUFBRUMsSUFBQUEsSUFBSSxFQUFFO0FBQVIsR0FBUDtBQUFBLENBQWxCOztBQUNBLElBQU1DLFNBQVMsR0FBRyxTQUFaQSxTQUFZO0FBQUEsU0FBTztBQUFFRCxJQUFBQSxJQUFJLEVBQUU7QUFBUixHQUFQO0FBQUEsQ0FBbEI7O0FBRUEsSUFBTUUsT0FBTyxHQUFHLFNBQVZBLE9BQVUsQ0FBQ0MsS0FBRCxFQUFXO0FBQ3ZCLFNBQ0ksaUNBQ0k7QUFBUSxJQUFBLFNBQVMsRUFBQyxXQUFsQjtBQUE4QixJQUFBLE9BQU8sRUFBRUEsS0FBSyxDQUFDSjtBQUE3QyxpQkFESixFQUVJO0FBQVEsSUFBQSxTQUFTLEVBQUMsV0FBbEI7QUFBOEIsSUFBQSxPQUFPLEVBQUVJLEtBQUssQ0FBQ0Y7QUFBN0MsaUJBRkoscUJBR21CLGtDQUFPRSxLQUFLLENBQUNDLEtBQWIsQ0FIbkIsQ0FESjtBQU9ILENBUkQ7O0FBVUEsSUFBTUMsZUFBZSxHQUFHLFNBQWxCQSxlQUFrQixDQUFBQyxLQUFLLEVBQUk7QUFDN0IsU0FBTztBQUFDRixJQUFBQSxLQUFLLEVBQUVFLEtBQUssQ0FBQ0Y7QUFBZCxHQUFQO0FBQ0gsQ0FGRDs7QUFJQSxJQUFNRyxjQUFjLEdBQUdDLFVBQVUsQ0FBQ0MsT0FBWCxDQUFtQkosZUFBbkIsRUFBb0M7QUFDdkROLEVBQUFBLFNBQVMsRUFBVEEsU0FEdUQ7QUFFdkRFLEVBQUFBLFNBQVMsRUFBVEE7QUFGdUQsQ0FBcEMsRUFHcEJDLE9BSG9CLENBQXZCLEMsQ0FLQTtBQUNBOztBQUVBLElBQU1RLEtBQUssR0FBR0MsS0FBSyxDQUFDQyxXQUFOLENBQWtCRCxLQUFLLENBQUNFLGVBQU4sQ0FBc0I7QUFDbERULEVBQUFBLEtBQUssRUFBRSxpQkFBdUI7QUFBQSxRQUF0QkEsTUFBc0IsdUVBQWQsQ0FBYzs7QUFBQSxRQUFYVSxNQUFXOztBQUMxQixRQUFJQSxNQUFNLENBQUNkLElBQVAsS0FBZ0IsV0FBcEIsRUFBaUM7QUFDN0IsYUFBT0ksTUFBSyxHQUFHLENBQWY7QUFDSCxLQUZELE1BRU8sSUFBSVUsTUFBTSxDQUFDZCxJQUFQLEtBQWdCLFdBQXBCLEVBQWlDO0FBQ3BDLGFBQU9JLE1BQUssR0FBRyxDQUFmO0FBQ0gsS0FGTSxNQUVBO0FBQ0gsYUFBT0EsTUFBUDtBQUNIO0FBQ0o7QUFUaUQsQ0FBdEIsQ0FBbEIsQ0FBZDtBQVlBVyxRQUFRLENBQUNDLE1BQVQsQ0FDSSxvQkFBQyxVQUFELENBQVksUUFBWjtBQUFxQixFQUFBLEtBQUssRUFBRU47QUFBNUIsR0FDSSxvQkFBQyxjQUFELE9BREosQ0FESixFQUlJTyxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsT0FBdkIsQ0FKSiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgIC8vIEFjdGlvbiBDcmVhdG9ycyAtIFlvdSBkb24ndCBuZWVkIHRvIGNoYW5nZSB0aGVzZVxuICAgIGNvbnN0IGluY3JlbWVudCA9ICgpID0+ICh7IHR5cGU6ICdpbmNyZW1lbnQnIH0pO1xuICAgIGNvbnN0IGRlY3JlbWVudCA9ICgpID0+ICh7IHR5cGU6ICdkZWNyZW1lbnQnIH0pO1xuICAgIFxuICAgIGNvbnN0IENvdW50ZXIgPSAocHJvcHMpID0+IHtcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgICAgPGJ1dHRvbiBjbGFzc05hbWU9XCJpbmNyZW1lbnRcIiBvbkNsaWNrPXtwcm9wcy5pbmNyZW1lbnR9PkluY3JlbWVudDwvYnV0dG9uPlxuICAgICAgICAgICAgICAgIDxidXR0b24gY2xhc3NOYW1lPVwiZGVjcmVtZW50XCIgb25DbGljaz17cHJvcHMuZGVjcmVtZW50fT5EZWNyZW1lbnQ8L2J1dHRvbj5cbiAgICAgICAgICAgICAgICBDdXJyZW50IENvdW50OiA8c3Bhbj57cHJvcHMuY291bnR9PC9zcGFuPlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICk7XG4gICAgfTtcbiAgICBcbiAgICBjb25zdCBtYXBTdGF0ZVRvUHJvcHMgPSBzdGF0ZSA9PiB7XG4gICAgICAgIHJldHVybiB7Y291bnQ6IHN0YXRlLmNvdW50fTtcbiAgICB9O1xuICAgIFxuICAgIGNvbnN0IFdyYXBwZWRDb3VudGVyID0gUmVhY3RSZWR1eC5jb25uZWN0KG1hcFN0YXRlVG9Qcm9wcywge1xuICAgICAgICBpbmNyZW1lbnQsXG4gICAgICAgIGRlY3JlbWVudFxuICAgIH0pKENvdW50ZXIpO1xuICAgIFxuICAgIC8vIE9ubHkgY2hhbmdlIGNvZGUgKmJlZm9yZSogbWUhXG4gICAgLy8gLS0tLS0tLS0tLS1cbiAgICBcbiAgICBjb25zdCBzdG9yZSA9IFJlZHV4LmNyZWF0ZVN0b3JlKFJlZHV4LmNvbWJpbmVSZWR1Y2Vycyh7XG4gICAgICAgIGNvdW50OiAoY291bnQgPSAwLCBhY3Rpb24pID0+IHtcbiAgICAgICAgICAgIGlmIChhY3Rpb24udHlwZSA9PT0gJ2luY3JlbWVudCcpIHtcbiAgICAgICAgICAgICAgICByZXR1cm4gY291bnQgKyAxO1xuICAgICAgICAgICAgfSBlbHNlIGlmIChhY3Rpb24udHlwZSA9PT0gJ2RlY3JlbWVudCcpIHtcbiAgICAgICAgICAgICAgICByZXR1cm4gY291bnQgLSAxO1xuICAgICAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgICAgICByZXR1cm4gY291bnQ7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICB9KSk7XG5cbiAgICBSZWFjdERPTS5yZW5kZXIoXG4gICAgICAgIDxSZWFjdFJlZHV4LlByb3ZpZGVyIHN0b3JlPXtzdG9yZX0+XG4gICAgICAgICAgICA8V3JhcHBlZENvdW50ZXIgLz5cbiAgICAgICAgPC9SZWFjdFJlZHV4LlByb3ZpZGVyPiwgXG4gICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJyNyb290JylcbiAgICApO1xuIl19</script><style>/* Copyright (C) Microsoft Corporation. All rights reserved. */
+
+.msreadout-word-highlight:not(.msreadout-inactive-highlight) {
+    background: #ffff00 !important;
+    color: black !important;
+}
+
+.msreadout-line-highlight:not(.msreadout-inactive-highlight) {
+    background: #b2d6f3 !important;
+    color: black !important;
+}
+
+@media screen and (-ms-high-contrast: active) {
+    .msreadout-word-highlight:not(.msreadout-inactive-highlight) {
+        -ms-high-contrast-adjust: none;
+        background-color: Highlight !important;
+        color: HighlightText !important;
+    }
+
+    .msreadout-line-highlight:not(.msreadout-inactive-highlight) {
+        -ms-high-contrast-adjust: none;
+        background: yellow !important;
+        color: black !important;
+    }
+}</style></head><body><div id="root"><div><button class="increment">Increment</button><button class="decrement">Decrement</button>Current Count: <span>2</span></div></div>
+
+
+<!--No need to change anything after this line!-->
+<!--No need to change anything after this line!-->
+<script src="./polyfill.min.js.download"></script>
+<script crossorigin="" src="./babel.min.js.download"></script>
+<script crossorigin="" src="./babel-preset-env.min.js.download"></script>
+<script src="./react.production.min.js.download"></script>
+<script src="./react-dom.production.min.js.download"></script>
+<script src="./redux.js.download"></script>
+<script src="./react-redux.js.download"></script>
+
+<link rel="stylesheet" href="./semantic.min.css"><script></script></body></html>
